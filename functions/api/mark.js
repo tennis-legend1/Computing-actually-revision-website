@@ -8,7 +8,6 @@ const ALLOW_SHARED_MARKING = window.ENV ? String(window.ENV.ALLOW_SHARED_MARKING
 const ALLOWED_ORIGIN = window.ENV ? window.ENV.ALLOWED_ORIGIN : '';
 
 // --- Navigation View Handler ---
-// This fixes the "showView is not defined" error for your navigation buttons!
 window.showView = function(viewId) {
   // Hide all view panels
   const views = document.querySelectorAll('.view');
@@ -42,8 +41,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Set up red AI marking button click listeners
   const markButtons = document.querySelectorAll(".btn.red, button, #mark-btn"); 
   markButtons.forEach(button => {
-    // Only bind to buttons that aren't handling standard page views
-    if (!button.getAttribute('onclick')?.includes('showView')) {
+    if (button.getAttribute('onclick') && button.getAttribute('onclick').includes('showView')) {
+      // Do nothing, handled natively by HTML inline click attribute
+    } else {
       button.addEventListener("click", handleMarkButtonClick);
     }
   });
