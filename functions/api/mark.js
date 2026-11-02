@@ -1,3 +1,6 @@
+const ALLOW_SHARED_MARKING = true;
+
+
 // Cloudflare Pages Function for Computing Revision Studio.
 // Locked to Codiv's documented free text-generation model. Never accept a model
 // name from the browser and never silently fall back to another model.
