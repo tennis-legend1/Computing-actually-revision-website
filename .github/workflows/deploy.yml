@@ -20,8 +20,8 @@ jobs:
         run: |
           echo "window.ENV = {" > config.js
           echo "  CODIV_API_KEY: '${{ secrets.CODIV_API_KEY }}'," >> config.js
-          echo "  ALLOW_SHARED_MARKING: ${{ secrets.ALLOW_SHARED_MARKING }}," >> config.js
-          echo "  ALLOWED_ORIGIN: '${{ secrets.ALLOWED_ORIGIN }}'" >> config.js
+          echo "  ALLOW_SHARED_MARKING: true," >> config.js
+          echo "  ALLOWED_ORIGIN: 'https://github.io'" >> config.js
           echo "};" >> config.js
 
       - name: Upload production assets
