@@ -211,5 +211,6 @@ function renderPlan(){document.getElementById('plan-days').innerHTML=planDays.ma
 function saveNotes(){state.notes=document.getElementById('my-notes').value;save();toast('Your reminders are saved on this device.')}
 function recommend(which){let msg={web:'Start with HTML, CSS, JavaScript and tables. Learn the job of each, then practise fixing a tiny code error.',design:'Start with game design documentation, then compare UI with UX and practise explaining accessibility improvements.',ethics:'Start with AI limitations, then practise privacy, consent and online-safety scenarios. Always explain the risk and a realistic response.',mixed:'Do a mixed practice set first. Your mistakes will tell you what to revise next.'};document.getElementById('recommendation').innerHTML='<b>Suggested next step:</b> '+msg[which]}
 function init(){populateSelects();renderHome();renderLesson();renderPlan();newPractice(false);updateTimer();document.getElementById('practice-topic').addEventListener('change',()=>newPractice(true));document.getElementById('practice-type').addEventListener('change',()=>newPractice(true))}init();
-<script> src="config.js"></script>
+<script src="config.js"></script>
+<script src="mark.js"></script>
 </script></body></html>
