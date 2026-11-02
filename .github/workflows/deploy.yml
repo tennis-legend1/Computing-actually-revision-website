@@ -27,7 +27,7 @@ jobs:
       - name: Upload production assets
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.' 
+          path: '.' # This uploads your root folder where index.html and mark.js live
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
